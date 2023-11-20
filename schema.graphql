@@ -1,0 +1,94 @@
+type EventsSummary {
+  id: ID!
+  approval: [Approval!]! @derivedFrom(field: "eventsSummary")
+  approvalsCount: BigInt!
+  burn: [Burn!]! @derivedFrom(field: "eventsSummary")
+  burnsCount: BigInt!
+  claim: [Claim!]! @derivedFrom(field: "eventsSummary")
+  claimsCount: BigInt!
+  eIP712DomainChanged: [EIP712DomainChanged!]! @derivedFrom(field: "eventsSummary")
+  eIP712DomainChangedsCount: BigInt!
+  fees: [Fees!]! @derivedFrom(field: "eventsSummary")
+  feessCount: BigInt!
+  mint: [Mint!]! @derivedFrom(field: "eventsSummary")
+  mintsCount: BigInt!
+  swap: [Swap!]! @derivedFrom(field: "eventsSummary")
+  swapsCount: BigInt!
+  sync: [Sync!]! @derivedFrom(field: "eventsSummary")
+  syncsCount: BigInt!
+  transfer: [Transfer!]! @derivedFrom(field: "eventsSummary")
+  transfersCount: BigInt!
+}
+
+type Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+  eventsSummary: String!
+}
+
+type Burn {
+  id: ID!
+  sender: String!
+  to: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type Claim {
+  id: ID!
+  sender: String!
+  recipient: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type EIP712DomainChanged {
+  id: ID!
+  eventsSummary: String!
+}
+
+type Fees {
+  id: ID!
+  sender: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type Mint {
+  id: ID!
+  sender: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type Swap {
+  id: ID!
+  sender: String!
+  to: String!
+  amount0In: BigInt!
+  amount1In: BigInt!
+  amount0Out: BigInt!
+  amount1Out: BigInt!
+  eventsSummary: String!
+}
+
+type Sync {
+  id: ID!
+  reserve0: BigInt!
+  reserve1: BigInt!
+  eventsSummary: String!
+}
+
+type Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+  eventsSummary: String!
+}
